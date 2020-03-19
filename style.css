@@ -1,0 +1,73 @@
+:root {
+  --central-column-width: 60vmin;
+  --central-column-bgcolor: rgba(0, 0, 0, 0.2);
+  --theme-light-color: hsl(105, 55%, 96%); /* For this color use HSL only */
+  --theme-dark-color: #E63946; /* accent and food */
+  --theme-secondary-light-color: #A8DADC;
+  --theme-secondary-dark-color: #457B9D;
+  --theme-bgcolor: #1D3557;
+  --theme-border-size: 0.2rem;
+  --text-size-biglogo: 7vmin;
+  --text-size-header: 5vmin;
+  --text-size-text: 2vmin;
+  --field-size: 10; /* this value gets transferred to js code */
+  --font-logo: 'Fredoka One', cursive;
+  --font-text: 'Roboto Mono', monospace;
+  --font-headers: 'Concert One', cursive;
+}
+
+body {
+  background-color: var(--theme-bgcolor);
+  font-family: var(--font-text);
+}
+
+.header {
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+  text-shadow: 0px 0px 5px rgba(0,0,0,0.75);
+  background-image: linear-gradient(to right, var(--theme-secondary-light-color) , var(--theme-secondary-dark-color));
+  text-align: center;
+  font-weight: bold;
+  font-size: var(--text-size-biglogo);
+  color: var(--theme-light-color);
+  font-family: var(--font-logo);
+  margin-bottom: 10vmin;
+  padding: 1vmin;
+}
+
+.header strong {
+  color: var(--theme-dark-color);
+}
+
+.score-table {
+  width: calc(var(--central-column-width) + (2 * var(--theme-border-size)));
+  height: 1vmin;
+  margin: 0 auto 1.3rem auto;
+  border: var(--theme-border-size) solid transparent;
+  background-color: var(--central-column-bgcolor);
+}
+
+.score-tab {
+  color: var(--theme-secondary-light-color);
+  text-align: right;
+  font-size: var(--text-size-text);
+  padding: 0;
+}
+
+#best-score, #current-score {
+  background-color: var(--theme-secondary-dark-color);
+  width: 5vmin;
+  text-align: right;
+  font-size: var(--text-size-text);
+  padding: 0 1vmin 0 0;
+}
+
+#field {
+  display: grid;
+  grid-template: repeat(var(--field-size), 1fr) / repeat(var(--field-size), 1fr);
+  grid-gap: var(--theme-border-size);
+  width: var(--central-column-width);
+  height: var(--central-column-width);
+  margin: 0 auto;
+  border: var(--theme-border-size) solid transparent;
+  background-color: var(--central-column-bgcolor);
+}
